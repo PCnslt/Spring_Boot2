@@ -22,26 +22,29 @@ public class DemoJdbc {
         String uname = "postgres";
         String pass = "abcd1234";
 //        String sql = "select sname from student where sid=1";
-        String sql = "select * from student";
+//        String sql = "select * from student";
+//        String sql = "insert into student values (2,'Anna',75)";
+//        String sql = "update student set sname='Larry' where sid=2";
+        String sql = "delete from student where sid=1";
 
         Connection con = DriverManager.getConnection(url,uname,pass);
         System.out.println("Conection established...");
         Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery(sql);
+//        ResultSet rs = st.executeQuery(sql);
+        boolean rs = st.execute(sql);
+
+        System.out.println(rs);
 
 //        rs.next();
 //        String name = rs.getString("sname");
 //        System.out.println("Name of student: "+name);
 
-        while(rs.next()){
-            System.out.print(rs.getInt(1)+" - ");
-            System.out.print(rs.getString(2)+" - ");
-            System.out.println(rs.getInt(3));
-        }
+//        while(rs.next()){
+//            System.out.print(rs.getInt(1)+" - ");
+//            System.out.print(rs.getString(2)+" - ");
+//            System.out.println(rs.getInt(3));
+//        }
 
-        while(rs.next()){
-            for(int i=1; i<=rs)
-        }
 
 
 
